@@ -102,14 +102,6 @@
   }
   .wave svg{ width: 100%; height: 80px; display:block; }
 
-  .wave-mobile{ display: none; }
-
-  @media (max-width: 720px){
-    .wave svg{ height: 40px; }
-    .wave-desktop{ display: none; }
-    .wave-mobile{ display: block; }
-  }
-
   /* ============ FUTURE SECTION ============ */
   .future-section{
     background: var(--blue);
@@ -244,38 +236,17 @@
     display: flex;
   }
 
-.modal-box{
-  background: var(--white);
-  color: var(--pink);
-  max-width: 480px;
-  width: 100%;
-  border-radius: 20px;
-  border: 2px solid var(--pink);
-  padding: 32px 28px 26px;
-  max-height: 85vh;
-  overflow-y: auto;
-
-  /* biar scrollbar gak mepet ke border/radius */
-  scrollbar-gutter: stable;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: var(--pink) #f4d7e1; /* Firefox */
-}
-
-/* Chrome, Edge, Safari */
-.modal-box::-webkit-scrollbar{
-  width: 6px;
-}
-.modal-box::-webkit-scrollbar-track{
-  background: transparent;
-  margin: 20px 0; /* biar gak nempel di ujung atas-bawah, ngikutin radius */
-}
-.modal-box::-webkit-scrollbar-thumb{
-  background: var(--pink);
-  border-radius: 999px;
-}
-.modal-box::-webkit-scrollbar-thumb:hover{
-  background: #b81f4d;
-}
+  .modal-box{
+    background: var(--white);
+    color: var(--pink);
+    max-width: 480px;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid var(--pink);
+    padding: 32px 28px 26px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
 
   .modal-box h3{
     font-size: 22px;
@@ -370,14 +341,11 @@
     </div>
 
     <div class="wave">
-    <svg class="wave-desktop" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#0068c0" d="M0,40 C40,10 80,10 120,40 C160,70 200,70 240,40 C280,10 320,10 360,40 C400,70 440,70 480,40 C520,10 560,10 600,40 C640,70 680,70 720,40 C760,10 800,10 840,40 C880,70 920,70 960,40 C1000,10 1040,10 1080,40 C1120,70 1160,70 1200,40 C1240,10 1280,10 1320,40 C1360,70 1400,70 1440,40 L1440,80 L0,80 Z"></path>
-    </svg>
-    <svg class="wave-mobile" viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#0068c0" d="M0,30 C120,10 240,10 360,30 C480,50 600,50 720,30 C840,10 960,10 1080,30 C1200,50 1320,50 1440,30 L1440,50 L0,50 Z"></path>
-    </svg>
-  </div>
-  
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#0068c0" d="M0,40 C40,10 80,10 120,40 C160,70 200,70 240,40 C280,10 320,10 360,40 C400,70 440,70 480,40 C520,10 560,10 600,40 C640,70 680,70 720,40 C760,10 800,10 840,40 C880,70 920,70 960,40 C1000,10 1040,10 1080,40 C1120,70 1160,70 1200,40 C1240,10 1280,10 1320,40 C1360,70 1400,70 1440,40 L1440,80 L0,80 Z"></path>
+      </svg>
+    </div>
+  </section>
 
   <!-- ============ FUTURE SECTION ============ -->
   <section class="future-section" id="future">
