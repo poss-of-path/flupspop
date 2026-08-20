@@ -236,17 +236,38 @@
     display: flex;
   }
 
-  .modal-box{
-    background: var(--white);
-    color: var(--pink);
-    max-width: 480px;
-    width: 100%;
-    border-radius: 20px;
-    border: 2px solid var(--pink);
-    padding: 32px 28px 26px;
-    max-height: 85vh;
-    overflow-y: auto;
-  }
+.modal-box{
+  background: var(--white);
+  color: var(--pink);
+  max-width: 480px;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid var(--pink);
+  padding: 32px 28px 26px;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  /* biar scrollbar gak mepet ke border/radius */
+  scrollbar-gutter: stable;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--pink) #f4d7e1; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.modal-box::-webkit-scrollbar{
+  width: 6px;
+}
+.modal-box::-webkit-scrollbar-track{
+  background: transparent;
+  margin: 20px 0; /* biar gak nempel di ujung atas-bawah, ngikutin radius */
+}
+.modal-box::-webkit-scrollbar-thumb{
+  background: var(--pink);
+  border-radius: 999px;
+}
+.modal-box::-webkit-scrollbar-thumb:hover{
+  background: #b81f4d;
+}
 
   .modal-box h3{
     font-size: 22px;
