@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorem Ipsum Dolor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink: #d9285e;
+    --blue: #0068c0;
+    --card-top: #ffedcd;
+    --card-bottom: #ffffff;
+    --icon-bg: #fdde23;
+    --btn: #ff7a1a;
+    --white: #ffffff;
+    --ink: #23262b;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  body{
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    background: var(--blue);
+    overflow-x: hidden;
+  }
+
+  h1,h2,h3{
+    font-family: 'Inter', sans-serif;
+  }
+
+  a, button{ font-family: 'Inter', sans-serif; }
+
+  /* ============ HERO ============ */
+  .hero{
+    position: relative;
+    background: var(--pink);
+    padding: 56px 8vw 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: nowrap;
+    min-height: 520px;
+  }
+
+  .hero-left{
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 560px;
+  }
+
+  .hero-title{
+    font-weight: 900;
+    line-height: 0.95;
+    font-size: clamp(48px, 8vw, 88px);
+    letter-spacing: -2px;
+    color: var(--white);
+    text-transform: lowercase;
+  }
+
+  .hero-subtitle{
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 28px);
+    margin-top: 18px;
+    color: var(--white);
+  }
+
+  .hero-text{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 12px;
+    opacity: 0.95;
+    color: var(--white);
+    max-width: 380px;
+  }
+
+  .btn-start{
+    margin-top: 26px;
+    display: inline-block;
+    background: var(--btn);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 14px 34px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-start:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 rgba(0,0,0,0.15);
+  }
+  .btn-start:active{
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+  }
+
+  .hero-right{
+    flex: 0 1 320px;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-right img{
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    display: block;
+  }
+
+  .wave{
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    line-height: 0;
+  }
+  .wave svg{ width: 100%; height: 80px; display:block; }
+
+  /* ============ FUTURE SECTION ============ */
+  .future-section{
+    background: var(--blue);
+    padding: 90px 8vw 40px;
+  }
+
+  .future-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: nowrap;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .future-left{
+    flex: 0 1 320px;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .future-left img{
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+  }
+
+  .future-right{
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 460px;
+  }
+
+  .future-right h2{
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--white);
+  }
+
+  .future-right p{
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--white);
+    opacity: 0.95;
+  }
+
+  /* ============ HOW IT WORKS ============ */
+  .how-title{
+    text-align: center;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 800;
+    color: var(--white);
+    margin: 80px 0 40px;
+  }
+
+  .cards-wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 6vw 90px;
+  }
+
+  .cards-row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .card{
+    background: linear-gradient(180deg, var(--card-top) 0%, var(--card-bottom) 100%);
+    border-radius: 18px;
+    padding: 22px 18px 26px;
+    cursor: pointer;
+    border: 3px solid var(--ink);
+    transition: transform 0.15s ease;
+    color: var(--ink);
+  }
+  .card:hover{
+    transform: translateY(-4px);
+  }
+
+  .card-icon{
+    width: 100%;
+    aspect-ratio: 1.5 / 1;
+    background: var(--icon-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .card-icon svg{ width: 46%; height: 46%; }
+
+  .card h3{
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .card p{
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #4a4a4a;
+  }
+
+  /* ============ FOOTER TEASER ============ */
+  .footer-teaser{
+    text-align: center;
+    font-weight: 800;
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--white);
+    padding: 0 8vw 90px;
+  }
+
+  /* ============ MODAL POPUP ============ */
+  .modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 10, 20, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 999;
+  }
+  .modal-overlay.active{
+    display: flex;
+  }
+
+  .modal-box{
+    background: linear-gradient(180deg, var(--card-top) 0%, var(--card-bottom) 100%);
+    color: var(--ink);
+    max-width: 480px;
+    width: 100%;
+    border-radius: 20px;
+    border: 3px solid var(--ink);
+    padding: 32px 28px 26px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .modal-box h3{
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: var(--pink);
+  }
+
+  .modal-box h4{
+    font-size: 14px;
+    font-weight: 700;
+    margin: 16px 0 6px;
+    color: var(--ink);
+  }
+
+  .modal-box ol, .modal-box ul{
+    padding-left: 20px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #3d3d3d;
+  }
+
+  .modal-box p{
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #3d3d3d;
+    margin-bottom: 6px;
+  }
+
+  .btn-back{
+    margin-top: 22px;
+    width: 100%;
+    background: var(--pink);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .btn-back:hover{ opacity: 0.9; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 720px){
+    .hero{
+      padding: 32px 6vw 90px;
+      gap: 18px;
+      align-items: center;
+      min-height: 0;
+    }
+    .hero-title{ font-size: clamp(30px, 10vw, 44px); letter-spacing: -1px; }
+    .hero-subtitle{ font-size: clamp(14px, 4vw, 18px); margin-top: 10px; }
+    .hero-text{ font-size: 11.5px; margin-top: 8px; }
+    .btn-start{ padding: 10px 22px; font-size: 12px; margin-top: 16px; }
+    .hero-right{ flex-basis: 130px; }
+
+    .future-section{ padding: 60px 6vw 20px; }
+    .future-row{ gap: 18px; align-items: center; }
+    .future-left{ flex-basis: 110px; }
+    .future-right h2{ font-size: clamp(16px, 5vw, 20px); }
+    .future-right p{ font-size: 11.5px; margin-top: 8px; line-height: 1.55; }
+
+    .how-title{ font-size: clamp(18px, 5vw, 24px); margin: 50px 0 26px; }
+
+    .cards-row{
+      gap: 10px;
+    }
+    .card{
+      padding: 12px 10px 16px;
+      border-radius: 12px;
+      border-width: 2px;
+    }
+    .card h3{ font-size: 12.5px; margin-bottom: 4px; }
+    .card p{ font-size: 9px; line-height: 1.4; }
+    .card-icon{ border-radius: 8px; margin-bottom: 8px; }
+  }
+
+  @media (max-width: 420px){
+    .card h3{ font-size: 11px; }
+    .card p{ display: none; }
+    .hero-right{ flex-basis: 100px; }
+    .future-left{ flex-basis: 90px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="hero-title">lorem<br>ipsum</h1>
+      <div class="hero-subtitle">Dolor sit amet consectetur</div>
+      <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+      <button class="btn-start" id="startBtn">START</button>
+    </div>
+    <div class="hero-right">
+      <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#0068c0" d="M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,30 L1440,80 L0,80 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ FUTURE SECTION ============ -->
+  <section class="future-section" id="future">
+    <div class="future-row">
+      <div class="future-left">
+        <img src="icon.png" alt="Icon">
+      </div>
+      <div class="future-right">
+        <h2>Lorem ipsum dolor sit amet consectetur</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+
+    <h2 class="how-title">Lorem Ipsum Works</h2>
+
+    <div class="cards-wrap">
+      <div class="cards-row">
+
+        <div class="card" data-title="Lorem Ipsum" data-points='["Lorem ipsum dolor sit amet consectetur adipiscing.","Sed do eiusmod tempor incididunt ut labore et dolore.","Ut enim ad minim veniam quis nostrud exercitation.","Duis aute irure dolor in reprehenderit in voluptate."]'>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4.5 14H11L10 22L19.5 9H13L13 2Z" fill="#d9285e" stroke="#1a1a1a" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Dolor Sit</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+
+        <div class="card" data-title="Amet Consectetur" data-points='["Consectetur adipiscing elit sed do eiusmod tempor.","Incididunt ut labore et dolore magna aliqua enim.","Ad minim veniam quis nostrud exercitation ullamco.","Laboris nisi ut aliquip ex ea commodo consequat."]'>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L21 3L15 21L11 13L3 12Z" fill="#0068c0" stroke="#1a1a1a" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Adipiscing Elit</h3>
+          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+        </div>
+
+        <div class="card" data-title="Eiusmod Tempor" data-points='["Aute irure dolor in reprehenderit in voluptate velit.","Esse cillum dolore eu fugiat nulla pariatur excepteur.","Sint occaecat cupidatat non proident sunt in culpa.","Qui officia deserunt mollit anim id est laborum."]'>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" fill="#fff" stroke="#1a1a1a" stroke-width="1.2"/><circle cx="12" cy="12" r="4" fill="#d9285e" stroke="#1a1a1a" stroke-width="1.2"/></svg>
+          </div>
+          <h3>Incididunt Ut</h3>
+          <p>Ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-teaser">
+      Lorem ipsum... Dolor, Sit Amet, Consectetur
+    </div>
+  </section>
+
+  <!-- ============ MODAL POPUP ============ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <h3 id="modalTitle">Lorem Ipsum</h3>
+      <h4>Points &amp; Regulations</h4>
+      <ol id="modalPoints"></ol>
+      <button class="btn-back" id="backBtn">BACK</button>
+    </div>
+  </div>
+
+<script>
+  // Smooth scroll START -> future section
+  document.getElementById('startBtn').addEventListener('click', function(){
+    document.getElementById('future').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Modal logic
+  const overlay = document.getElementById('modalOverlay');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalPoints = document.getElementById('modalPoints');
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.getAttribute('data-title');
+      const points = JSON.parse(card.getAttribute('data-points'));
+      modalTitle.textContent = title;
+      modalPoints.innerHTML = points.map(p => `<li>${p}</li>`).join('');
+      overlay.classList.add('active');
+    });
+  });
+
+  document.getElementById('backBtn').addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
