@@ -104,7 +104,7 @@
 
   /* ============ FUTURE SECTION ============ */
   .future-section{
-    background: var(--blue);
+    background: var(--white);
     padding: 90px 8vw 40px;
   }
 
@@ -140,14 +140,14 @@
     font-size: clamp(26px, 4vw, 34px);
     font-weight: 800;
     line-height: 1.2;
-    color: var(--white);
+    color: var(--blue);
   }
 
   .future-right p{
     margin-top: 16px;
     font-size: 15px;
     line-height: 1.7;
-    color: var(--white);
+    color: var(--blue);
     opacity: 0.95;
     text-align: justify;
     text-align-last: left;
@@ -158,7 +158,7 @@
     text-align: center;
     font-size: clamp(24px, 4vw, 32px);
     font-weight: 800;
-    color: var(--white);
+    color: var(--blue);
     margin: 80px 0 40px;
   }
 
@@ -175,41 +175,24 @@
   }
 
   .card{
-    background: linear-gradient(180deg, var(--card-top) 0%, var(--card-bottom) 100%);
+    background: transparent;
     border-radius: 18px;
-    padding: 22px 18px 26px;
+    padding: 0;
     cursor: pointer;
-    border: 2px solid var(--btn);
+    border: none;
+    overflow: hidden;
     transition: transform 0.15s ease;
-    color: var(--ink);
+    line-height: 0;
   }
   .card:hover{
     transform: translateY(-4px);
   }
 
-  .card-icon{
+  .card-img{
     width: 100%;
-    aspect-ratio: 1.5 / 1;
-    background: var(--icon-bg);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .card-icon svg{ width: 46%; height: 46%; }
-
-  .card h3{
-    font-size: 21px;
-    font-weight: 800;
-    margin-bottom: 8px;
-    color: var(--blue);
-  }
-
-  .card p{
-    font-size: 14px;
-    line-height: 1.55;
-    color: #4a4a4a;
+    height: auto;
+    display: block;
+    border-radius: 18px;
   }
 
   /* ============ FOOTER TEASER ============ */
@@ -217,7 +200,7 @@
     text-align: center;
     font-weight: 800;
     font-size: clamp(20px, 3vw, 26px);
-    color: var(--white);
+    color: var(--blue);
     padding: 0 8vw 90px;
   }
 
@@ -276,6 +259,20 @@
     margin-bottom: 6px;
   }
 
+  /* Gallery mode (e.g. Caretakers: stacked photos) */
+  .modal-gallery{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+  .modal-gallery img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+  }
+
   .btn-back{
     margin-top: 22px;
     width: 100%;
@@ -313,18 +310,12 @@
       gap: 8px;
     }
     .card{
-      padding: 12px 8px 16px;
       border-radius: 8px;
-      border-width: 1px;
     }
-    .card h3{ font-size: 12.5px; margin-bottom: 4px; }
-    .card p{ font-size: 9px; line-height: 1.4; }
-    .card-icon{ border-radius: 8px; margin-bottom: 8px; }
+    .card-img{ border-radius: 8px; }
   }
 
   @media (max-width: 420px){
-    .card h3{ font-size: 11px; }
-    .card p{ font-size: 8px; line-height: 1.3; }
     .hero-right{ flex-basis: 100px; }
     .future-left{ flex-basis: 220px; }
   }
@@ -342,7 +333,7 @@
 
     <div class="wave">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#0068c0" d="M0,40 C40,10 80,10 120,40 C160,70 200,70 240,40 C280,10 320,10 360,40 C400,70 440,70 480,40 C520,10 560,10 600,40 C640,70 680,70 720,40 C760,10 800,10 840,40 C880,70 920,70 960,40 C1000,10 1040,10 1080,40 C1120,70 1160,70 1200,40 C1240,10 1280,10 1320,40 C1360,70 1400,70 1440,40 L1440,80 L0,80 Z"></path>
+        <path fill="#ffffff" d="M0,40 C40,10 80,10 120,40 C160,70 200,70 240,40 C280,10 320,10 360,40 C400,70 440,70 480,40 C520,10 560,10 600,40 C640,70 680,70 720,40 C760,10 800,10 840,40 C880,70 920,70 960,40 C1000,10 1040,10 1080,40 C1120,70 1160,70 1200,40 C1240,10 1280,10 1320,40 C1360,70 1400,70 1440,40 L1440,80 L0,80 Z"></path>
       </svg>
     </div>
   </section>
@@ -366,17 +357,9 @@
 
         <div class="card"
           data-title="CARETAKERS"
-          data-points='[
-          "Suimah",
-          "Sai",
-          "Sou"
-          ]'
-          data-closing="By joining Posspath, you agree to follow these regulations and help keep the space comfortable for everyone.">
-          <div class="card-icon">
-               <img src="assets/SUPERMAN.webp" alt="icon" style="width:46%; height:46%; object-fit:contain;">
-          </div>
-          <h3>Caretakers</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+          data-type="gallery"
+          data-images='["assets/ct1.webp","assets/ct2.webp","assets/ct3.webp"]'>
+          <img class="card-img" src="assets/caretakers.webp" alt="Caretakers">
         </div>
 
         <div class="card"
@@ -393,25 +376,16 @@
           "Interaction with outsiders is allowed as long as it does not become two-way."
           ]'
           data-closing="By joining Posspath, you agree to follow these regulations and help keep the space comfortable for everyone.">
-          <div class="card-icon">
-            <img src="assets/SUPERMAN.webp" alt="icon" style="width:46%; height:46%; object-fit:contain;">
-          </div>
-          <h3>Regulations</h3>
-          <p>Sed do eiusmod tempor incididunt ut labore.</p>
+          <img class="card-img" src="assets/regulations.webp" alt="Regulations">
         </div>
 
-        <div class="card" data-title="How to Join?" 
+        <div class="card" data-title="How to Join?"
           data-points='[
           "Make sure your account follows only @posspath.",
           "If you&#39;re using a recycled account, kindly clear your timeline with at least 5 blank space tweets.",
           "Fill out the form that will be posted on our timeline as scheduled.",
           "Sit tight and wait for the verification announcement."]'>
-          
-          <div class="card-icon">
-            <img src="assets/SUPERMAN.webp" alt="icon" style="width:46%; height:46%; object-fit:contain;">
-          </div>
-          <h3>How to Join</h3>
-          <p>Ut labore et dolore magna aliqua ut enim ad.</p>
+          <img class="card-img" src="assets/howtojoin.webp" alt="How to Join">
         </div>
 
       </div>
@@ -426,7 +400,7 @@
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal-box">
       <h3 id="modalTitle">Lorem Ipsum</h3>
-      <ol id="modalPoints"></ol>
+      <div id="modalBody"></div>
       <button class="btn-back" id="backBtn">BACK</button>
     </div>
   </div>
@@ -440,25 +414,37 @@
   // Modal logic
   const overlay = document.getElementById('modalOverlay');
   const modalTitle = document.getElementById('modalTitle');
-  const modalPoints = document.getElementById('modalPoints');
+  const modalBody = document.getElementById('modalBody');
   const cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const title = card.getAttribute('data-title');
-      const points = JSON.parse(card.getAttribute('data-points'));
-      const closing = card.getAttribute('data-closing');
       modalTitle.textContent = title;
-      modalPoints.innerHTML = points.map(p => `<li>${p}</li>`).join('');
+      modalBody.innerHTML = '';
 
-      const oldClosing = document.getElementById('modalClosing');
-      if (oldClosing) oldClosing.remove();
-      if (closing) {
-        const p = document.createElement('p');
-        p.id = 'modalClosing';
-        p.style.marginTop = '14px';
-        p.textContent = closing;
-        modalPoints.insertAdjacentElement('afterend', p);
+      if (card.getAttribute('data-type') === 'gallery') {
+        // Gallery mode: stacked photos, flexible to modal width
+        const images = JSON.parse(card.getAttribute('data-images'));
+        const gallery = document.createElement('div');
+        gallery.className = 'modal-gallery';
+        gallery.innerHTML = images.map(src => `<img src="${src}" alt="${title}">`).join('');
+        modalBody.appendChild(gallery);
+      } else {
+        // List mode: points + optional closing text
+        const points = JSON.parse(card.getAttribute('data-points'));
+        const closing = card.getAttribute('data-closing');
+
+        const ol = document.createElement('ol');
+        ol.innerHTML = points.map(p => `<li>${p}</li>`).join('');
+        modalBody.appendChild(ol);
+
+        if (closing) {
+          const p = document.createElement('p');
+          p.style.marginTop = '14px';
+          p.textContent = closing;
+          modalBody.appendChild(p);
+        }
       }
 
       overlay.classList.add('active');
