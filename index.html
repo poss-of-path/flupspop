@@ -230,12 +230,19 @@
     max-height: 85vh;
     overflow-y: auto;
   }
+  .modal-logo{
+    display: block;
+    width: 64px;
+    height: auto;
+    margin: 0 auto 12px;
+  }
 
   .modal-box h3{
     font-size: 22px;
     font-weight: 800;
     margin-bottom: 14px;
     color: var(--pink);
+    text-align: center;
   }
 
   .modal-box h4{
@@ -398,11 +405,12 @@
 
   <!-- ============ MODAL POPUP ============ -->
   <div class="modal-overlay" id="modalOverlay">
-    <div class="modal-box">
-      <h3 id="modalTitle">Lorem Ipsum</h3>
-      <div id="modalBody"></div>
-      <button class="btn-back" id="backBtn">BACK</button>
-    </div>
+      <div class="modal-box">
+        <img src="assets/LOGO.webp" alt="Logo" class="modal-logo">
+        <h3 id="modalTitle">Lorem Ipsum</h3>
+        <div id="modalBody"></div>
+        <button class="btn-back" id="backBtn">BACK</button>
+      </div>
   </div>
 
 <script>
