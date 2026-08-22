@@ -454,6 +454,7 @@
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
   const cards = document.querySelectorAll('.card');
+    const modalBox = document.querySelector('.modal-box');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -485,6 +486,7 @@
         }
       }
 
+            modalBox.scrollTop = 0;
       overlay.classList.add('active');
     });
   });
