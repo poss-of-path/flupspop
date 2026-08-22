@@ -195,13 +195,41 @@
     border-radius: 18px;
   }
 
-  /* ============ FOOTER TEASER ============ */
-  .footer-teaser{
+  /* ============ ASK US MORE BUTTON ============ */
+  .btn-ask-more{
+    display: block;
+    width: 100%;
+    margin-top: 26px;
+    background: var(--pink);
+    color: var(--white);
     text-align: center;
-    font-weight: 800;
-    font-size: clamp(20px, 3vw, 26px);
-    color: var(--blue);
-    padding: 0 8vw 90px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .btn-ask-more:hover{ opacity: 0.9; }
+
+  /* ============ FOOTER LOGO ============ */
+  .footer-logo{
+    text-align: center;
+    padding: 30px 8vw 70px;
+  }
+  .footer-logo img{
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: inline-block;
+  }
+
+  @media (max-width: 720px){
+    .footer-logo{ padding: 20px 8vw 50px; }
+    .footer-logo img{ max-width: 130px; }
   }
 
   /* ============ MODAL POPUP ============ */
@@ -396,10 +424,12 @@
         </div>
 
       </div>
+
+      <a class="btn-ask-more" href="https://alterspring.org/@fluspop" target="_blank" rel="noopener">ASK US MORE!</a>
     </div>
 
-    <div class="footer-teaser">
-      Lorem ipsum... Dolor, Sit Amet, Consectetur
+    <div class="footer-logo">
+      <img src="assets/logo-colored.webp" alt="fluspop logo">
     </div>
   </section>
 
